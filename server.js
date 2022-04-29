@@ -6,6 +6,10 @@ const port = 3000;
 // http://localhost:3000/static/lv.jpeg
 app.use('/static', express.static(__dirname + '/public/images'));
 
+// express v4.16+ which has merged bodyParser
+// so we can use express.json() directly
+app.use(express.json());
+
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
